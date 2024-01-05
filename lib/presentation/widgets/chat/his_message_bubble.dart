@@ -35,23 +35,22 @@ class _ImageBubble extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return ClipRRect(
-      borderRadius: BorderRadius.circular(20),
-      child: Image.network(
-        'https://yesno.wtf/assets/no/3-80a6f5b5d6684674bcfeda34accca4e1.gif',
-        width: size.width * 0.7,
-        height: 150,
-        fit: BoxFit.cover,
-        loadingBuilder: (context, child, loadingProgress) {
-          if (loadingProgress == null) return child;
+        borderRadius: BorderRadius.circular(20),
+        child: Image.network(
+          'https://yesno.wtf/assets/yes/14-b57c6dc03aa15a4b18f53eb50d6197ee.gif',
+          width: size.width * 0.7,
+          height: 150,
+          fit: BoxFit.cover,
+          loadingBuilder: (context, child, loadingProgress) {
+            if (loadingProgress == null) return child;
 
-          return Container(
-            width: size.width * 0.7,
-            height: 150,
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-            child: const Text('Mi amor esta enviando una imagen'),
-          );
-        },
-      ),
-    );
+            return Container(
+              width: size.width * 0.7,
+              height: 150,
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              child: const Text('Mi amor está enviando una imagen'),
+            );
+          },
+        ));
   }
 }
